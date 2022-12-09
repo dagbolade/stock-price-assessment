@@ -25,7 +25,7 @@ df.head()
 df.shape
 
 #describe the data
-st.subheader('Data from', start_input)
+st.subheader('Data Description from '+start_input+' to '+end+'')
 st.write(df.describe())
 
 #VISUALIZING THE Data
@@ -51,14 +51,14 @@ plt.plot(df.Close)
 st.pyplot(fig)
 
 #VISUALIZING THE Data with the moving average
-st.subheader('closing price(in usd) vs year chart with 100MA & 200MA')
+st.subheader('closing price(in usd) vs year chart with 50ma, 100MA & 200MA')
 ma50 = df.Close.rolling(50).mean()
 ma100 = df.Close.rolling(100).mean()
 ma200 = df.Close.rolling(200).mean()
 fig = plt.figure(figsize = (12,6))
-plt.plot(ma100)
-plt.plot(ma200)
-plt.plot(ma50)
+plt.plot(ma100, label=f"ma100", color="blue")
+plt.plot(ma200, label=f"ma200", color="green")
+plt.plot(ma50, label=f"ma50", color="red")
 plt.plot(df.Close)
 st.pyplot(fig)
 
@@ -137,7 +137,7 @@ y_pred = lstm_model.predict(x_test)
 # now we are back to the actual predicted price, non-scaled
 y_pred = scaler.inverse_transform(y_pred)
 
-# now let plot the predictions instead of just numbers. CHARTS BABY
+# now let plot the predictions instead of just numbers
 fig1=plt.figure(figsize=(12,6))
 plt.plot(actual_prices, color="red", label=f"Actual {user_input} Price")
 plt.plot(y_pred, color="blue", label=f"Predicted {user_input} Price")
