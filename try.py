@@ -186,5 +186,5 @@ if temp > 0 :
 else :
     trend='fall'
 str1=Next_day[0][0]
-te='There could be a '+trend+' in the stock price'
+te='There could be a '+trend+' in the stock price market for '+user_input+''
 st.write(te)
