@@ -8,6 +8,11 @@ import pandas_datareader as data
 import streamlit as st
 import tensorflow
 from keras.models import load_model
+from pandas_datareader import data as pdr
+
+
+
+yf.pdr_override()
 
 
 
@@ -20,7 +25,8 @@ st.title('Solfintech Stock price prediction Trend')
 
 user_input = st.text_input('Enter the stock ticker you wish to check', 'AAPL')
 #creating the dataframe
-df= data.DataReader(user_input, 'yahoo', start_input, end)
+#df= data.DataReader(user_input, 'yahoo', start_input, end)
+df = pdr.get_data_yahoo(user_input, start_input, end)
 df.head()
 df.shape
 
