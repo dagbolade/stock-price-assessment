@@ -1,3 +1,6 @@
+sklearn
+preprocessing
+numpy
 yfinance
 pandas
 plotly
@@ -5,4 +8,3 @@ matplotlib
 keras
 tensorflow
 pandas_datareader
-sklearn
