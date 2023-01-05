@@ -2,3 +2,5 @@ yfinance
 pandas
 plotly
 matplotlib
+keras
+tensorflow
