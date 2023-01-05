@@ -10,3 +10,4 @@ Used both linear regression and Lstm model to train datas gotten from yahoo fina
 - clone the file
 - make sure you are using the right python version 3.7,3.8,3.10 and above
 - run the try.py
+- deployed link -https://dagbolade-stock-price-assessment-try-demwqi.streamlit.app
