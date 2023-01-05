@@ -8,3 +8,4 @@ matplotlib
 keras
 tensorflow
 pandas_datareader
+scikit-learn
