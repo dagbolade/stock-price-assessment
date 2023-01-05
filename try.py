@@ -76,7 +76,7 @@ train_header_array = scaler.fit_transform(df['Close'].values.reshape(-1, 1))
 
 #train_header_array
 
-lstm_model = load_model('new_lstm_model.h5')
+lstm_model = load_model('neww_lstm_model.h5')
 #define how many days in the past we will look into
 #the closing price of the particular day would depend on the previous days
 historical_data = 50
@@ -106,7 +106,8 @@ x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
 # so this is a perfect way to see how well it performs
 _start = start_input
 _end = datetime.today().strftime("%Y-%m-%d")
-_data = data.DataReader(user_input,  'yahoo', _start, _end)
+_data = pdr.get_data_yahoo(user_input, _start, _end)
+
 
 #getting the actual prices
 # we need to scale prices, we need to concatenate the full data set that we want to predict on
